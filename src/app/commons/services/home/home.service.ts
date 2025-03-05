@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { IPhoto } from '../../interfaces';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ export class HomeService {
   constructor(private http: HttpClient) { }
 
   getDataList(): Observable<Array<IPhoto>> {
-    return this.http.get<Array<any>>('https://jsonplaceholder.typicode.com/photos').pipe(
+    return this.http.get<Array<any>>(`${environment.apiPhotos}/photos`).pipe(
       map((arr) => {
         const photos: Array<IPhoto> = [];
         arr.map(r => {

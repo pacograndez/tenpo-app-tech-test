@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$EQyDp2LSWEiGQPAVKNPPyOdBwdjvYXQL.S06mcdyMBxgSdWbmE7Hq",
+      "name": "Paco",
+      "lastname": "Grández",
+      "fullname": "Paco Grández",
+      "id": 1
+    }
+  ]
+}

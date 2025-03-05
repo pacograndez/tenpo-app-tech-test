@@ -2,15 +2,22 @@
     <div class="row">
         <div class="col-12 col-md-10 mx-auto">
             <mat-toolbar color="primary">
-                <span>Bienvenido Paco</span>
+                <span>Bienvenido {{userName}}</span>
                 <span class="example-spacer"></span>
-                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <button mat-icon-button (click)="onLogout()">
                     <mat-icon>logout</mat-icon>
                 </button>
             </mat-toolbar>
-           <div class="my-5">
-            <app-data-table [data]="data"></app-data-table>
-           </div>
+            <div class="my-5">
+                <div *ngIf="isLoading; else dataTemplate">
+                    <div class="spinner-container">
+                        <mat-spinner class="spinner-icon"></mat-spinner>
+                    </div>
+                </div>
+                <ng-template #dataTemplate>
+                    <app-data-table *ngIf="!isLoading" [data]="data"></app-data-table>
+                  </ng-template>
+            </div>
         </div>
     </div>
 </div>

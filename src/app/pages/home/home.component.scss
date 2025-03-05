@@ -1,3 +1,17 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+
+  .spinner-container {
+    position: relative;
+    height: 300px;
+  }
+
+  .spinner-icon {
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px !important;
+      height: 50px !important;
+  }
