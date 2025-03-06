@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, Subject, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IUser } from '../../interfaces';
 
@@ -26,8 +26,12 @@ export class AuthService {
           lastName: res.user.lastname,
           fullName: res.user.fullname
         }
+      }),
+      catchError((error) => {
+        console.error('Error login', error);
+        return throwError(() => new Error('Credenciales incorrectas o problema de red.'));
       })
-    )
+    );
   }
 
   public setDataUser(data: IUser): void {

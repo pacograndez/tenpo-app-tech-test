@@ -8,29 +8,29 @@
                         <mat-form-field appearance="fill">
                             <mat-label>Nombre</mat-label>
                             <input matInput formControlName="email" />
-                            <!-- <mat-error *ngIf="userForm.get('name').hasError('required')">
+                            <mat-error *ngIf="loginPresenter.emailControl.hasError('required')">
                               El nombre es obligatorio.
                             </mat-error>
-                            <mat-error *ngIf="userForm.get('name').hasError('minlength')">
-                              El nombre debe tener al menos 3 caracteres.
-                            </mat-error> -->
                         </mat-form-field>
                     </div>
                     <div class="form-group">
                         <mat-form-field appearance="fill">
                             <mat-label>Password</mat-label>
                             <input matInput formControlName="password" type="password" />
-                            <!-- <mat-error *ngIf="userForm.get('name').hasError('required')">
+                            <mat-error *ngIf="loginPresenter.passwordControl.hasError('required')">
                               El nombre es obligatorio.
                             </mat-error>
-                            <mat-error *ngIf="userForm.get('name').hasError('minlength')">
-                              El nombre debe tener al menos 3 caracteres.
-                            </mat-error> -->
                         </mat-form-field>
                     </div>
                     <div class="form-group">
                         <button mat-raised-button color="primary" type="submit"
                             [disabled]="loginPresenter.form.invalid">Iniciar sesión</button>
+                    </div>
+
+                    <div class="my-3">
+                        <mat-error *ngIf="errorMessage">
+                            {{errorMessage}}
+                        </mat-error>
                     </div>
                 </form>
             </mat-card>

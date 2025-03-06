@@ -13,6 +13,14 @@ export class LoginPresenter {
         this.initForm();
     }
 
+    public get emailControl() {
+        return this.form.get('email') as FormControl<string | null>;
+    }
+
+    public get passwordControl() {
+        return this.form.get('password') as FormControl<string | null>;
+    }
+
     private initControlsAndValidators() {
         this.email = new FormControl(null, [Validators.required, Validators.email]);
         this.password = new FormControl(null, [Validators.required]);

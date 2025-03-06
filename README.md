@@ -1,27 +1,61 @@
-# TenpoAppTechTest
+# Tenpo App Tech Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Este proyecto es una aplicación Angular que utiliza `json-server` para simular una API REST para la funcionalidad de logueo.
+Y realiza un llamado a la API pública `https://jsonplaceholder.typicode.com/photos` para obtener el listado solicitado.
 
-## Development server
+A continuación se detallan los pasos para instalar las dependencias, ejecutar el proyecto y las pruebas unitarias.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Requisitos previos
 
-## Code scaffolding
+- Node.js (versión 16.20.2 o superior)
+- npm (versión 8.19.4 o superior)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalación de dependencias
 
-## Build
+Para instalar las dependencias necesarias, ejecuta el siguiente comando en la raíz del proyecto:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```sh
+npm install
+```
 
-## Running unit tests
+## Ejecución del proyecto Angular
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para ejecutar el proyecto Angular, utiliza el siguiente comando:
 
-## Running end-to-end tests
+```sh
+npm run start
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Esto iniciará el servidor de desarrollo de Angular y podrás acceder a la aplicación en `http://localhost:4200`.
 
-## Further help
+## Ejecución del servidor json-server
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para ejecutar el servidor de `json-server`, utiliza el siguiente comando:
+
+```sh
+start:backend
+```
+
+Esto iniciará el servidor de `json-server` y podrás acceder a la API en `http://localhost:4000`.
+
+## Credenciales para pruebas
+
+Las credenciales para ingresar al aplicativo son:
+
+EMAIL: 'test@gmail.com'
+PASSWORD: '123456'
+
+
+## Ejecución de pruebas unitarias
+
+Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
+
+```sh
+npm test
+```
+
+Esto ejecutará las pruebas unitarias utilizando Karma y Jasmine.
+
+## Contacto
+
+Para cualquier consulta o problema, por favor contacta al equipo de desarrollo.

@@ -21,12 +21,14 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class LoginComponent implements OnDestroy {
 
+  public errorMessage: string | null;;
   private destroy$: Subject<void>;
 
   public constructor(public loginPresenter: LoginPresenter,
     private authService: AuthService,
     private router: Router
   ) {
+    this.errorMessage = null;
     this.destroy$ = new Subject<void>();
   }
 
@@ -40,7 +42,9 @@ export class LoginComponent implements OnDestroy {
     this.authService.login(email, password).pipe(takeUntil(this.destroy$)).subscribe((res: IUser) => {
       this.authService.setDataUser(res);
       this.router.navigate(['home']);
-    })
+    }, (error) => {
+      this.errorMessage = error.message;
+    });
   }
 
   public ngOnDestroy(): void {
